@@ -20,7 +20,7 @@ IB_DESIGNABLE
 @interface ScrollBar : UIControl{
     NSMutableArray* textLayers;
 }
-@property(strong,nonatomic)IBInspectable NSMutableArray* titles;
+@property(strong,nonatomic)IBInspectable NSArray* titles;
 @property(assign,nonatomic)IBInspectable CGFloat fontSize;
 @property(strong,nonatomic)IBInspectable UIColor* titleColor;
 @property(strong,nonatomic)IBInspectable UIColor* titleSelColor;
