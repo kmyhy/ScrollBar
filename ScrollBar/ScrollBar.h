@@ -34,5 +34,5 @@ IB_DESIGNABLE
 
 @property(strong,nonatomic)UIScrollView *scrollView;
 @property(assign,nonatomic)CGFloat titlesWidth;
-
+-(void)releaseResource;
 @end

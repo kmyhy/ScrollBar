@@ -122,7 +122,7 @@
     NSString* title = _titles[index];
     CATextLayer* textLayer = textLayers[index];
     
-    textLayer.font = (__bridge CFTypeRef _Nullable)([UIFont systemFontOfSize: self.fontSize]);
+    textLayer.font = (__bridge CFTypeRef _Nullable)([UIFont italicSystemFontOfSize: self.fontSize]);
     textLayer.fontSize = self.fontSize;
     
     CGSize size= [self titleTextSize:index];
@@ -221,5 +221,18 @@
         
     }
     
+}
+-(void)releaseResource{
+    for(__strong CALayer * layer in textLayers){
+        [layer removeFromSuperlayer];
+        layer =  nil;
+    }
+    if(self.delegate){
+        for(__strong UIViewController* vc in self.delegate.childViewControllers){
+            [vc willMoveToParentViewController:nil];
+            [vc removeFromParentViewController];
+            vc = nil;
+        }
+    }
 }
 @end

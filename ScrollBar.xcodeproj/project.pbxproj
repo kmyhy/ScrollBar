@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		1223B4AD1E83B4A500DAA40C /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223B4AC1E83B4A500DAA40C /* UIScrollView+UITouch.m */; };
 		128FBD5B1E84E4200028C68E /* SwitchViewScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */; };
+		128FBD6F1E850E3C0028C68E /* ScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 128FBD6E1E850E3C0028C68E /* ScrollBar.m */; };
 		12C693741E827A52000ADAB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C693731E827A52000ADAB1 /* main.m */; };
 		12C693771E827A52000ADAB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C693761E827A52000ADAB1 /* AppDelegate.m */; };
 		12C6937A1E827A52000ADAB1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C693791E827A52000ADAB1 /* ViewController.m */; };
 		12C6937D1E827A52000ADAB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C6937B1E827A52000ADAB1 /* Main.storyboard */; };
 		12C6937F1E827A52000ADAB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12C6937E1E827A52000ADAB1 /* Assets.xcassets */; };
 		12C693821E827A52000ADAB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C693801E827A52000ADAB1 /* LaunchScreen.storyboard */; };
-		12C6938B1E827B87000ADAB1 /* ScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C6938A1E827B87000ADAB1 /* ScrollBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +23,8 @@
 		1223B4AC1E83B4A500DAA40C /* UIScrollView+UITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UITouch.m"; sourceTree = "<group>"; };
 		128FBD591E84E4200028C68E /* SwitchViewScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchViewScrollBar.h; sourceTree = "<group>"; };
 		128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchViewScrollBar.m; sourceTree = "<group>"; };
+		128FBD6D1E850E3C0028C68E /* ScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBar.h; sourceTree = "<group>"; };
+		128FBD6E1E850E3C0028C68E /* ScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBar.m; sourceTree = "<group>"; };
 		12C6936F1E827A52000ADAB1 /* ScrollBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C693731E827A52000ADAB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12C693751E827A52000ADAB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,8 +35,6 @@
 		12C6937E1E827A52000ADAB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12C693811E827A52000ADAB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12C693831E827A52000ADAB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		12C693891E827B87000ADAB1 /* ScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBar.h; sourceTree = "<group>"; };
-		12C6938A1E827B87000ADAB1 /* ScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +69,8 @@
 			children = (
 				12C693751E827A52000ADAB1 /* AppDelegate.h */,
 				12C693761E827A52000ADAB1 /* AppDelegate.m */,
-				12C693891E827B87000ADAB1 /* ScrollBar.h */,
-				12C6938A1E827B87000ADAB1 /* ScrollBar.m */,
+				128FBD6D1E850E3C0028C68E /* ScrollBar.h */,
+				128FBD6E1E850E3C0028C68E /* ScrollBar.m */,
 				128FBD591E84E4200028C68E /* SwitchViewScrollBar.h */,
 				128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */,
 				1223B4AB1E83B4A500DAA40C /* UIScrollView+UITouch.h */,
@@ -167,9 +167,9 @@
 			files = (
 				12C6937A1E827A52000ADAB1 /* ViewController.m in Sources */,
 				128FBD5B1E84E4200028C68E /* SwitchViewScrollBar.m in Sources */,
+				128FBD6F1E850E3C0028C68E /* ScrollBar.m in Sources */,
 				12C693771E827A52000ADAB1 /* AppDelegate.m in Sources */,
 				1223B4AD1E83B4A500DAA40C /* UIScrollView+UITouch.m in Sources */,
-				12C6938B1E827B87000ADAB1 /* ScrollBar.m in Sources */,
 				12C693741E827A52000ADAB1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
