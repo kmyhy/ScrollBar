@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _scrollBar.titles = @[@"黑黑黑黑",@"灰灰灰灰",@"绿绿绿绿",@"蓝蓝蓝蓝",@"橙橙橙橙"] ;
+    _scrollBar.titles = @[@"黑黑黑黑二维翁翁仍然",@"1111111111dddwqqq",@"灰灰灰灰",@"绿绿绿绿",@"蓝蓝蓝蓝",@"橙橙橙橙"] ;
     _scrollBar.delegate = self;
     
     [_scrollBar switchTo:0];

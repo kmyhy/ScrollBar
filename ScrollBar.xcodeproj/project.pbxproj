@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1223B4AD1E83B4A500DAA40C /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223B4AC1E83B4A500DAA40C /* UIScrollView+UITouch.m */; };
 		128FBD5B1E84E4200028C68E /* SwitchViewScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */; };
 		128FBD6F1E850E3C0028C68E /* ScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 128FBD6E1E850E3C0028C68E /* ScrollBar.m */; };
+		12A1F93E1ECD3F4900E2CCDA /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A1F93D1ECD3F4900E2CCDA /* UIScrollView+UITouch.m */; };
 		12C693741E827A52000ADAB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C693731E827A52000ADAB1 /* main.m */; };
 		12C693771E827A52000ADAB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C693761E827A52000ADAB1 /* AppDelegate.m */; };
 		12C6937A1E827A52000ADAB1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C693791E827A52000ADAB1 /* ViewController.m */; };
@@ -19,12 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1223B4AB1E83B4A500DAA40C /* UIScrollView+UITouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UITouch.h"; sourceTree = "<group>"; };
-		1223B4AC1E83B4A500DAA40C /* UIScrollView+UITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UITouch.m"; sourceTree = "<group>"; };
 		128FBD591E84E4200028C68E /* SwitchViewScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchViewScrollBar.h; sourceTree = "<group>"; };
 		128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchViewScrollBar.m; sourceTree = "<group>"; };
 		128FBD6D1E850E3C0028C68E /* ScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBar.h; sourceTree = "<group>"; };
 		128FBD6E1E850E3C0028C68E /* ScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBar.m; sourceTree = "<group>"; };
+		12A1F93C1ECD3F4900E2CCDA /* UIScrollView+UITouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UITouch.h"; sourceTree = "<group>"; };
+		12A1F93D1ECD3F4900E2CCDA /* UIScrollView+UITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UITouch.m"; sourceTree = "<group>"; };
 		12C6936F1E827A52000ADAB1 /* ScrollBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C693731E827A52000ADAB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12C693751E827A52000ADAB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,8 +73,8 @@
 				128FBD6E1E850E3C0028C68E /* ScrollBar.m */,
 				128FBD591E84E4200028C68E /* SwitchViewScrollBar.h */,
 				128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */,
-				1223B4AB1E83B4A500DAA40C /* UIScrollView+UITouch.h */,
-				1223B4AC1E83B4A500DAA40C /* UIScrollView+UITouch.m */,
+				12A1F93C1ECD3F4900E2CCDA /* UIScrollView+UITouch.h */,
+				12A1F93D1ECD3F4900E2CCDA /* UIScrollView+UITouch.m */,
 				12C693781E827A52000ADAB1 /* ViewController.h */,
 				12C693791E827A52000ADAB1 /* ViewController.m */,
 				12C6937B1E827A52000ADAB1 /* Main.storyboard */,
@@ -169,8 +169,8 @@
 				128FBD5B1E84E4200028C68E /* SwitchViewScrollBar.m in Sources */,
 				128FBD6F1E850E3C0028C68E /* ScrollBar.m in Sources */,
 				12C693771E827A52000ADAB1 /* AppDelegate.m in Sources */,
-				1223B4AD1E83B4A500DAA40C /* UIScrollView+UITouch.m in Sources */,
 				12C693741E827A52000ADAB1 /* main.m in Sources */,
+				12A1F93E1ECD3F4900E2CCDA /* UIScrollView+UITouch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
