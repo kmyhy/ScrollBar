@@ -51,7 +51,7 @@
 2. fillControllers 将根据 titles 数组来构建一个 view controller数组。方法的实现如下：
 
 	```swift
--(void)fillControllers:(NSArray<NSString*>*)titles{
+	-(void)fillControllers:(NSArray<NSString*>*)titles{
     _controllers = [NSMutableArray new];
     
     for(int i = 0;i<titles.count;i++){
@@ -80,8 +80,9 @@
         }
         [_controllers addObject:vc];
     }
-}
+	}
 	```
+	
 	出于演示目的，这里创建了 5 个不同背景色的 UIViewController。这些 view controller都保存到 controller 数组属性中。
 	
 3. 配置 SwitchViewScrollBar 的委托对象，以便在 ViewController 中实现 SwitchViewScrollBarDelegate 协议。
