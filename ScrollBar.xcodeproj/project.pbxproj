@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123D91FE1EE7CE4300EB5547 /* UIViewController+Swipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D91FD1EE7CE4300EB5547 /* UIViewController+Swipe.m */; };
 		128FBD5B1E84E4200028C68E /* SwitchViewScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */; };
 		128FBD6F1E850E3C0028C68E /* ScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 128FBD6E1E850E3C0028C68E /* ScrollBar.m */; };
 		12A1F93E1ECD3F4900E2CCDA /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A1F93D1ECD3F4900E2CCDA /* UIScrollView+UITouch.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		123D91FC1EE7CE4300EB5547 /* UIViewController+Swipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swipe.h"; sourceTree = "<group>"; };
+		123D91FD1EE7CE4300EB5547 /* UIViewController+Swipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swipe.m"; sourceTree = "<group>"; };
 		128FBD591E84E4200028C68E /* SwitchViewScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchViewScrollBar.h; sourceTree = "<group>"; };
 		128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchViewScrollBar.m; sourceTree = "<group>"; };
 		128FBD6D1E850E3C0028C68E /* ScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBar.h; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				128FBD6E1E850E3C0028C68E /* ScrollBar.m */,
 				128FBD591E84E4200028C68E /* SwitchViewScrollBar.h */,
 				128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */,
+				123D91FC1EE7CE4300EB5547 /* UIViewController+Swipe.h */,
+				123D91FD1EE7CE4300EB5547 /* UIViewController+Swipe.m */,
 				12A1F93C1ECD3F4900E2CCDA /* UIScrollView+UITouch.h */,
 				12A1F93D1ECD3F4900E2CCDA /* UIScrollView+UITouch.m */,
 				12C693781E827A52000ADAB1 /* ViewController.h */,
@@ -169,6 +174,7 @@
 				128FBD5B1E84E4200028C68E /* SwitchViewScrollBar.m in Sources */,
 				128FBD6F1E850E3C0028C68E /* ScrollBar.m in Sources */,
 				12C693771E827A52000ADAB1 /* AppDelegate.m in Sources */,
+				123D91FE1EE7CE4300EB5547 /* UIViewController+Swipe.m in Sources */,
 				12C693741E827A52000ADAB1 /* main.m in Sources */,
 				12A1F93E1ECD3F4900E2CCDA /* UIScrollView+UITouch.m in Sources */,
 			);

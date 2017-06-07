@@ -7,7 +7,7 @@
 //
 
 #import "SwitchViewScrollBar.h"
-
+#import "UIViewController+Swipe.h"
 
 @implementation SwitchViewScrollBar
 @dynamic delegate;
@@ -38,6 +38,15 @@
         NSInteger from = self.selIndex;
         
         UIViewController* toVC=[self.delegate scrollBar:self controllerAtIndex:to];// toVC 都是新建的
+        // 轻扫手势支持
+        if(toVC && !toVC.leftSwipeTargetAdded){// 如果toVC不为空切手势未添加
+            [toVC.leftSwipe addTarget:self action:@selector(handleSwipes:)];
+            toVC.leftSwipeTargetAdded = YES;
+        }
+        if(toVC && !toVC.rightSwipeTargetAdded){// 如果toVC不为空切手势未添加
+            [toVC.rightSwipe addTarget:self action:@selector(handleSwipes:)];
+            toVC.rightSwipeTargetAdded = YES;
+        }
         
         UIView* containerView = [self.delegate containerViewInScrollBar:self];
         if(toVC == nil || containerView == nil){
@@ -96,8 +105,17 @@
     }else{
         self.selIndex = to;
     }
-    
-    
-    
 }
+- (void)handleSwipes:(UISwipeGestureRecognizer *)sender
+{
+    if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
+//        NSLog(@"当前位置：%ld，滑动方向：左",(long)self.selIndex);
+        [self switchTo:self.selIndex+1];
+    }else if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+//        NSLog(@"当前位置：%ld，滑动方向：右",(long)self.selIndex);
+        [self switchTo:self.selIndex-1];
+
+    }
+}
+
 @end

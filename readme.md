@@ -23,8 +23,11 @@
 ### 实例化 SwitchViewScrollBar
 
 1. 使用故事版
+
 	在故事版中拖一个 UIView，设置 Class 为 SwitchViewScrollBar，并建立好对应的 IBOutlet 连接。
+	
 2. 使用代码
+
 	调用 initWithFrame 方法进行实例化。
 	
 
@@ -46,7 +49,7 @@
 2. 配置 SwitchViewScrollBar 的委托对象，以便在 ViewController 中实现 SwitchViewScrollBarDelegate 协议。
 3. 默认显示第一个 ViewController。
 
-###实现 SwitchViewScrollBarDelegate 协议
+### 实现 SwitchViewScrollBarDelegate 协议
 
 在 ViewController 中实现 SwitchViewScrollBarDelegate 协议的两个必须方法：
 
