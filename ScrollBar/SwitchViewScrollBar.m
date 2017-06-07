@@ -39,11 +39,11 @@
         
         UIViewController* toVC=[self.delegate scrollBar:self controllerAtIndex:to];// toVC 都是新建的
         // 轻扫手势支持
-        if(toVC && !toVC.leftSwipeTargetAdded){// 如果toVC不为空切手势未添加
+        if(toVC && !toVC.leftSwipeTargetAdded){// 如果toVC不为空且手势未添加
             [toVC.leftSwipe addTarget:self action:@selector(handleSwipes:)];
             toVC.leftSwipeTargetAdded = YES;
         }
-        if(toVC && !toVC.rightSwipeTargetAdded){// 如果toVC不为空切手势未添加
+        if(toVC && !toVC.rightSwipeTargetAdded){// 如果toVC不为空且手势未添加
             [toVC.rightSwipe addTarget:self action:@selector(handleSwipes:)];
             toVC.rightSwipeTargetAdded = YES;
         }
