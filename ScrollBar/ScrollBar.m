@@ -90,7 +90,8 @@
         
         
         if(titleLayerVisible){
-            [self.scrollView scrollRectToVisible:titleLayer.frame animated:YES];
+            CGRect rect=CGRectInset(titleLayer.frame, -10, 0);// 在文字左右加一点空白，好看
+            [self.scrollView scrollRectToVisible:rect animated:YES];
         }
     }
 }
