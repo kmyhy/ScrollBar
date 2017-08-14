@@ -31,11 +31,11 @@
     
 }
 -(void)switchTo:(NSInteger)to{
-    
+    NSInteger from = self.selIndex;
     
     if(self.delegate){
         
-        NSInteger from = self.selIndex;
+        
         
         UIViewController* toVC=[self.delegate scrollBar:self controllerAtIndex:to];// toVC 都是新建的
         // 轻扫手势支持
@@ -53,12 +53,14 @@
             return;
         }
         
-        if(self.delegate.childViewControllers.count == 0 || to==from){// 第一次显示(或者要切换的两个视图是同一个)，不需要转换动画
+        if(self.delegate.childViewControllers.count == 0){// 第一次显示(或者要切换的两个视图是同一个)，不需要转换动画
             toVC.view.frame = CGRectMake(0,0, containerView.frame.size.width, containerView.frame.size.height);
             [self.delegate addChildViewController:toVC];
             [containerView addSubview:toVC.view];
             [toVC didMoveToParentViewController:self.delegate];
             [self setSelIndex:to];// 这句重要！否则 title 的选中样式不会变！
+        }else if(to==from){
+            return;
         }else if(self.delegate.childViewControllers.count == 1){
             // 每次转换动画完成后，fromVC 都会被抛弃，childViewController 中只包含 toVC
             UIViewController* fromVC = self.delegate.childViewControllers[0];
@@ -109,12 +111,12 @@
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
-//        NSLog(@"当前位置：%ld，滑动方向：左",(long)self.selIndex);
+        //        NSLog(@"当前位置：%ld，滑动方向：左",(long)self.selIndex);
         [self switchTo:self.selIndex+1];
     }else if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-//        NSLog(@"当前位置：%ld，滑动方向：右",(long)self.selIndex);
+        //        NSLog(@"当前位置：%ld，滑动方向：右",(long)self.selIndex);
         [self switchTo:self.selIndex-1];
-
+        
     }
 }
 
