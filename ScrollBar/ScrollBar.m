@@ -80,11 +80,11 @@
     if(index>=0 && index<textLayers.count){
         CATextLayer *titleLayer = textLayers[index];
         
-        CGFloat titleRight=CGRectGetMaxX(titleLayer.frame);
-        CGFloat titleLeft=CGRectGetMinX(titleLayer.frame);
-        
-        CGFloat scrollVisibleLeft = self.scrollView.contentOffset.x;
-        CGFloat scrollVisibleRight = scrollVisibleLeft + CGRectGetWidth(self.scrollView.frame);
+//        CGFloat titleRight=CGRectGetMaxX(titleLayer.frame);
+//        CGFloat titleLeft=CGRectGetMinX(titleLayer.frame);
+//        
+//        CGFloat scrollVisibleLeft = self.scrollView.contentOffset.x;
+//        CGFloat scrollVisibleRight = scrollVisibleLeft + CGRectGetWidth(self.scrollView.frame);
         
 //        BOOL titleLayerInvisible = titleRight > scrollVisibleRight || titleLeft < scrollVisibleLeft;// 这个 title 是否处于不可见区域
         
