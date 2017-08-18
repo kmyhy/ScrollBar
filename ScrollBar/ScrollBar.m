@@ -86,14 +86,23 @@
         CGFloat scrollVisibleLeft = self.scrollView.contentOffset.x;
         CGFloat scrollVisibleRight = scrollVisibleLeft + CGRectGetWidth(self.scrollView.frame);
         
-        BOOL titleLayerVisible = titleRight > scrollVisibleRight || titleLeft < scrollVisibleLeft;
+//        BOOL titleLayerInvisible = titleRight > scrollVisibleRight || titleLeft < scrollVisibleLeft;// 这个 title 是否处于不可见区域
         
         
-        if(titleLayerVisible){
-            CGRect rect=CGRectInset(titleLayer.frame, -10, 0);// 在文字左右加一点空白，好看
+//        if(titleLayerInvisible){
+            CGRect rect=titleLayer.frame;// 在文字左右加一点空白，好看
+            // 在目标 title 左右各片移一个 title，好看
+            if(index>0 && index < textLayers.count-1){
+                CATextLayer* preTitle = textLayers[index-1];
+                CATextLayer* nextTitle = textLayers[index+1];
+                
+                rect = CGRectMake(CGRectGetMinX(preTitle.frame), CGRectGetMinY(rect), CGRectGetMaxX(nextTitle.frame)-CGRectGetMinX(preTitle.frame), CGRectGetHeight(rect));
+            }
+            
+        rect = CGRectInset(rect, -20, 0);
             [self.scrollView scrollRectToVisible:rect animated:YES];
         }
-    }
+//    }
 }
 -(CGSize)titleTextSize:(NSInteger)index{
     
