@@ -7,7 +7,6 @@
 //
 
 #import "ScrollBar.h"
-#import "UIScrollView+UITouch.h"
 
 @interface ScrollBar()
 
