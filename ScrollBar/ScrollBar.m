@@ -48,6 +48,9 @@
     
     // 不要在初始化方法里添加 subLayers,而应当在 layoutSubviews 方法中添加
     // [self layoutTitles];
+    
+    self.advancedMode = NO;
+    self.selFontSize = self.fontSize;
 }
 -(void)layoutSubviews{
     [super layoutSubviews];
@@ -107,13 +110,14 @@
 -(CGSize)titleTextSize:(NSInteger)index{
     
     NSString* title = _titles[index];
-    
+    CGFloat fontSize = index==_selIndex?_selFontSize:_fontSize;
+    UIFont *font= index==_selIndex?[UIFont boldSystemFontOfSize:fontSize]:[UIFont systemFontOfSize:fontSize];
     NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
     textStyle.alignment = NSTextAlignmentCenter;
     
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:self.fontSize], NSParagraphStyleAttributeName: textStyle};
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: font, NSParagraphStyleAttributeName: textStyle};
     
-    CGSize titleSize = [title boundingRectWithSize: CGSizeMake(self.titleMaxWidth, self.titleMaxHeight)  options: NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size;
+    CGSize titleSize = [title boundingRectWithSize: CGSizeMake(self.titleMaxWidth, self.frame.size.height)  options: NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size;
     
     return titleSize;
 }
@@ -122,7 +126,7 @@
     if(index>=0 && index < _titles.count){
 
         for(int i=0;i<index;i++){
-            offset+=[self titleTextSize:i].width;
+            offset+=[self titleTextSize:i].width+_gapOfTitles;
         }
         offset+=(index+1)*_gapOfTitles;
     }
@@ -132,12 +136,13 @@
     NSString* title = _titles[index];
     CATextLayer* textLayer = textLayers[index];
     
-    textLayer.font = (__bridge CFTypeRef _Nullable)([UIFont italicSystemFontOfSize: self.fontSize]);
-    textLayer.fontSize = self.fontSize;
+    CGFloat fontSize = index==_selIndex?_selFontSize:_fontSize;
+    textLayer.font = (__bridge CFTypeRef _Nullable)([UIFont italicSystemFontOfSize:fontSize]);
+    textLayer.fontSize = fontSize;
     
     CGSize size= [self titleTextSize:index];
     
-    textLayer.frame = CGRectMake([self leftOffset:index], self.titleTop, size.width, size.height);
+    textLayer.frame = CGRectMake([self leftOffset:index], (self.frame.size.height-fontSize)/2, size.width, size.height);
     textLayer.string = title;
     
     textLayer.alignmentMode = kCAAlignmentCenter;
@@ -176,6 +181,10 @@
     _fontSize=fontSize;
     [self setNeedsLayout];
 }
+-(void)setSelFontSize:(CGFloat)fontSize{
+    _selFontSize=fontSize;
+    [self setNeedsLayout];
+}
 -(void)setTitleColor:(UIColor*)titleColor{
     _titleColor =titleColor;
     [self setNeedsLayout];
@@ -203,11 +212,13 @@
 -(void)setSelIndex:(NSInteger)index{
     if(index>=0 && index<textLayers.count && index!=_selIndex){
         _selIndex = index;
-        for(int i = 0;i<textLayers.count;i++){
-            CATextLayer *layer=textLayers[i];
-            layer.foregroundColor = _selIndex==i?self.titleSelColor.CGColor:
-            self.titleColor.CGColor;
-        }
+//        for(int i = 0;i<textLayers.count;i++){
+//            CATextLayer *layer=textLayers[i];
+//            layer.foregroundColor = _selIndex==i?self.titleSelColor.CGColor:
+//            self.titleColor.CGColor;
+//            layer.fontSize = _selIndex==i?_selFontSize:_fontSize;
+//        }
+        [self setNeedsLayout];
         [self scrollToTitle:index];
     }
 }

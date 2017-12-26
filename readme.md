@@ -13,6 +13,9 @@
 3. 防止抖动（频繁切换），在上一次转换动画结束前不允许再次切换。
 4. 用法简单，只需要设置两个属性，并实现 2 个指定的协议方法。
 5. 实现用轻扫手势来切换ViewController
+6. 支持大小字模式
+
+	<img src="3.png" width="300"/>
 
 ## 用法
 
@@ -39,10 +42,17 @@
 ```swift
 	// 1
 	_scrollBar.titles = @[@"黑黑黑黑",@"灰灰灰灰",@"绿绿绿绿",@"蓝蓝蓝蓝",@"橙橙橙橙"];
-	[self fillControllers:_scrollBar.titles];
 	// 2
+	[self fillControllers:_scrollBar.titles];
+	// 3
     _scrollBar.delegate = self;
-    // 3
+   // 4
+    _scrollBar.fontSize = 16;
+    _scrollBar.selFontSize =28;
+   // 5
+    _scrollBar.titleSelColor = [UIColor blackColor];
+    _scrollBar.titleColor = [UIColor colorWithHex:0x868686];
+    // 6
     [_scrollBar switchTo:0];
 
 ```
@@ -84,9 +94,11 @@
 	```
 	
 	出于演示目的，这里创建了 5 个不同背景色的 UIViewController。这些 view controller都保存到 controller 数组属性中。
-	
+
 3. 配置 SwitchViewScrollBar 的委托对象，以便在 ViewController 中实现 SwitchViewScrollBarDelegate 协议。
-4. 默认显示第一个 ViewController。
+4. 设置选中/未选中时的文字字号大小。
+5. 设置选中/未选中时的文字颜色。
+6. 默认显示第一个 ViewController。
 
 ### 实现 SwitchViewScrollBarDelegate 协议
 

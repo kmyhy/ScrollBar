@@ -29,6 +29,9 @@ IB_DESIGNABLE
 @property(assign,nonatomic)IBInspectable CGFloat gapOfTitles;
 @property(assign,nonatomic)IBInspectable CGFloat titleTop;
 @property(assign,nonatomic)IBInspectable NSInteger selIndex;
+// 大小字模式特殊样式专用属性
+@property(assign,nonatomic)IBInspectable BOOL advancedMode;// 是否使用大小字模式
+@property(assign,nonatomic)IBInspectable CGFloat selFontSize;// 高级模式下，选中的字体大小
 
 @property(weak,nonatomic)UIViewController<ScrollBarDelegate> *delegate;
 

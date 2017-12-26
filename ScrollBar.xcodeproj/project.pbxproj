@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		123D91FE1EE7CE4300EB5547 /* UIViewController+Swipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D91FD1EE7CE4300EB5547 /* UIViewController+Swipe.m */; };
+		128B32571FF23F040099EC41 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 128B32551FF23F030099EC41 /* UIColor+Hex.m */; };
 		128FBD5B1E84E4200028C68E /* SwitchViewScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */; };
 		128FBD6F1E850E3C0028C68E /* ScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 128FBD6E1E850E3C0028C68E /* ScrollBar.m */; };
 		12A1F93E1ECD3F4900E2CCDA /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A1F93D1ECD3F4900E2CCDA /* UIScrollView+UITouch.m */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		123D91FC1EE7CE4300EB5547 /* UIViewController+Swipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swipe.h"; sourceTree = "<group>"; };
 		123D91FD1EE7CE4300EB5547 /* UIViewController+Swipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swipe.m"; sourceTree = "<group>"; };
+		128B32551FF23F030099EC41 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		128B32561FF23F030099EC41 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		128FBD591E84E4200028C68E /* SwitchViewScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchViewScrollBar.h; sourceTree = "<group>"; };
 		128FBD5A1E84E4200028C68E /* SwitchViewScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchViewScrollBar.m; sourceTree = "<group>"; };
 		128FBD6D1E850E3C0028C68E /* ScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBar.h; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 			children = (
 				12C693751E827A52000ADAB1 /* AppDelegate.h */,
 				12C693761E827A52000ADAB1 /* AppDelegate.m */,
+				128B32561FF23F030099EC41 /* UIColor+Hex.h */,
+				128B32551FF23F030099EC41 /* UIColor+Hex.m */,
 				128FBD6D1E850E3C0028C68E /* ScrollBar.h */,
 				128FBD6E1E850E3C0028C68E /* ScrollBar.m */,
 				128FBD591E84E4200028C68E /* SwitchViewScrollBar.h */,
@@ -175,6 +180,7 @@
 				128FBD6F1E850E3C0028C68E /* ScrollBar.m in Sources */,
 				12C693771E827A52000ADAB1 /* AppDelegate.m in Sources */,
 				123D91FE1EE7CE4300EB5547 /* UIViewController+Swipe.m in Sources */,
+				128B32571FF23F040099EC41 /* UIColor+Hex.m in Sources */,
 				12C693741E827A52000ADAB1 /* main.m in Sources */,
 				12A1F93E1ECD3F4900E2CCDA /* UIScrollView+UITouch.m in Sources */,
 			);

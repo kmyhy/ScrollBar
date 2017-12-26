@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SwitchViewScrollBar.h"
+#import "UIColor+Hex.h"
 
 @interface ViewController ()<SwitchViewScrollBarDelegate>
 //@property (weak, nonatomic) ContainerController *container;
@@ -28,6 +29,11 @@
     [self fillControllers:_scrollBar.titles];
     _scrollBar.delegate = self;
     
+    _scrollBar.fontSize = 16;
+    _scrollBar.selFontSize =28;
+    _scrollBar.titleSelColor = [UIColor blackColor];
+    _scrollBar.titleColor = [UIColor colorWithHex:0x868686];
+    _scrollBar.gapOfTitles = 13;
     [_scrollBar switchTo:0];
 //    [self performSegueWithIdentifier:@"Container" sender:nil];
 }
