@@ -37,7 +37,7 @@
 
 -(void)setup{
     self.fontSize = 15;
-    self.titleMaxWidth = 120;
+    self.titleMaxWidth = 320;
     self.titleMaxHeight = 22;
     self.titles = [@[@"中国成语故事历史文化传播",@"少儿科普知识",@"中国成语故事历史文化传播",@"少儿科普知识",@"中国成语故事历史文化传播"] mutableCopy];
     
