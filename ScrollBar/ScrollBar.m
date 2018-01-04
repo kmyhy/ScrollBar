@@ -58,15 +58,15 @@
 }
 // MARK: - Private
 -(void)layoutTitles{
-//    NSLog(@"%s",__func__);
+    //    NSLog(@"%s",__func__);
     textLayers = [NSMutableArray new];
     
     [self initScrollView];
     
     for(int i = 0 ;i<_titles.count;i++){
-    
+        
         CATextLayer* textLayer=[CATextLayer layer];
-
+        
         [textLayers addObject:textLayer];
         
         [self configTitle:i];
@@ -82,29 +82,29 @@
     if(index>=0 && index<textLayers.count){
         CATextLayer *titleLayer = textLayers[index];
         
-//        CGFloat titleRight=CGRectGetMaxX(titleLayer.frame);
-//        CGFloat titleLeft=CGRectGetMinX(titleLayer.frame);
-//        
-//        CGFloat scrollVisibleLeft = self.scrollView.contentOffset.x;
-//        CGFloat scrollVisibleRight = scrollVisibleLeft + CGRectGetWidth(self.scrollView.frame);
+        //        CGFloat titleRight=CGRectGetMaxX(titleLayer.frame);
+        //        CGFloat titleLeft=CGRectGetMinX(titleLayer.frame);
+        //
+        //        CGFloat scrollVisibleLeft = self.scrollView.contentOffset.x;
+        //        CGFloat scrollVisibleRight = scrollVisibleLeft + CGRectGetWidth(self.scrollView.frame);
         
-//        BOOL titleLayerInvisible = titleRight > scrollVisibleRight || titleLeft < scrollVisibleLeft;// 这个 title 是否处于不可见区域
+        //        BOOL titleLayerInvisible = titleRight > scrollVisibleRight || titleLeft < scrollVisibleLeft;// 这个 title 是否处于不可见区域
         
         
-//        if(titleLayerInvisible){
-            CGRect rect=titleLayer.frame;// 在文字左右加一点空白，好看
-            // 在目标 title 左右各片移一个 title，好看
-            if(index>0 && index < textLayers.count-1){
-                CATextLayer* preTitle = textLayers[index-1];
-                CATextLayer* nextTitle = textLayers[index+1];
-                
-                rect = CGRectMake(CGRectGetMinX(preTitle.frame), CGRectGetMinY(rect), CGRectGetMaxX(nextTitle.frame)-CGRectGetMinX(preTitle.frame), CGRectGetHeight(rect));
-            }
+        //        if(titleLayerInvisible){
+        CGRect rect=titleLayer.frame;// 在文字左右加一点空白，好看
+        // 在目标 title 左右各片移一个 title，好看
+        if(index>0 && index < textLayers.count-1){
+            CATextLayer* preTitle = textLayers[index-1];
+            CATextLayer* nextTitle = textLayers[index+1];
             
-        rect = CGRectInset(rect, -20, 0);
-            [self.scrollView scrollRectToVisible:rect animated:YES];
+            rect = CGRectMake(CGRectGetMinX(preTitle.frame), CGRectGetMinY(rect), CGRectGetMaxX(nextTitle.frame)-CGRectGetMinX(preTitle.frame), CGRectGetHeight(rect));
         }
-//    }
+        
+        rect = CGRectInset(rect, -20, 0);
+        [self.scrollView scrollRectToVisible:rect animated:YES];
+    }
+    //    }
 }
 -(CGSize)titleTextSize:(NSInteger)index{
     
@@ -123,7 +123,7 @@
 -(CGFloat)leftOffset:(NSInteger)index{
     CGFloat offset = 0;
     if(index>=0 && index < _titles.count){
-
+        
         for(int i=0;i<index;i++){
             offset+=[self titleTextSize:i].width+_gapOfTitles;
         }
@@ -136,7 +136,13 @@
     CATextLayer* textLayer = textLayers[index];
     
     CGFloat fontSize = index==_selIndex?_selFontSize:_fontSize;
+    
     textLayer.font = (__bridge CFTypeRef _Nullable)([UIFont italicSystemFontOfSize:fontSize]);
+    
+    if(_advancedMode && index==_selIndex){
+        textLayer.font = (__bridge CFTypeRef _Nullable)([UIFont boldSystemFontOfSize:fontSize]);
+    }
+    
     textLayer.fontSize = fontSize;
     
     CGSize size= [self titleTextSize:index];
@@ -211,12 +217,12 @@
 -(void)setSelIndex:(NSInteger)index{
     if(index>=0 && index<textLayers.count && index!=_selIndex){
         _selIndex = index;
-//        for(int i = 0;i<textLayers.count;i++){
-//            CATextLayer *layer=textLayers[i];
-//            layer.foregroundColor = _selIndex==i?self.titleSelColor.CGColor:
-//            self.titleColor.CGColor;
-//            layer.fontSize = _selIndex==i?_selFontSize:_fontSize;
-//        }
+        //        for(int i = 0;i<textLayers.count;i++){
+        //            CATextLayer *layer=textLayers[i];
+        //            layer.foregroundColor = _selIndex==i?self.titleSelColor.CGColor:
+        //            self.titleColor.CGColor;
+        //            layer.fontSize = _selIndex==i?_selFontSize:_fontSize;
+        //        }
         [self setNeedsLayout];
         [self scrollToTitle:index];
     }
@@ -225,15 +231,15 @@
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     CGPoint point = [[touches anyObject] locationInView:self];
-
+    
     CALayer *layer = [self.scrollView.layer hitTest:point];
-
+    
     
     if([layer isKindOfClass:[CATextLayer class]]){
         
         NSInteger index=[textLayers indexOfObject:layer];
         if(index != NSNotFound && index != self.selIndex){
-
+            
             if(self.delegate && [self.delegate respondsToSelector:@selector(scrollBar:switchTo:)]){
                 [self.delegate scrollBar:self switchTo:index];
             }

@@ -39,3 +39,4 @@ IB_DESIGNABLE
 @property(assign,nonatomic)CGFloat titlesWidth;
 -(void)releaseResource;
 @end
+
