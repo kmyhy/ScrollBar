@@ -37,6 +37,11 @@ IB_DESIGNABLE
 
 @property(strong,nonatomic)UIScrollView *scrollView;
 @property(assign,nonatomic)CGFloat titlesWidth;
+// 文字下面划条线
+@property(assign,nonatomic)CGFloat underlineWidth;
+@property(assign,nonatomic)CGFloat underlineTopOffset;
+@property(assign,nonatomic)CGFloat underlineCornerWidth;
+@property(strong,nonatomic)UIColor* underlineColor;
 -(void)releaseResource;
 @end
 

@@ -50,6 +50,12 @@
     
     self.advancedMode = NO;
     self.selFontSize = self.fontSize;
+    
+    self.underlineWidth=0;
+    self.underlineTopOffset = 8;
+    self.underlineColor=[UIColor clearColor];
+    self.underlineCornerWidth =0;
+    
 }
 -(void)layoutSubviews{
     [super layoutSubviews];
@@ -72,7 +78,6 @@
         [self configTitle:i];
         
         [self.scrollView.layer addSublayer:textLayer];
-        
     }
     [self resizeScrollView];
     [self scrollToTitle:_selIndex];
@@ -155,6 +160,16 @@
     textLayer.foregroundColor = (self.selIndex == index)?self.titleSelColor.CGColor:self.titleColor.CGColor;
     
     textLayer.contentsScale = [UIScreen mainScreen].scale;
+    
+    if(self.underlineWidth>0 && index==_selIndex){
+        CALayer* lineLayer = [CALayer new];
+        
+        lineLayer.backgroundColor = self.underlineColor.CGColor;
+        lineLayer.frame = CGRectMake(0, size.height+self.underlineTopOffset, textLayer.frame.size.width, self.underlineWidth);
+        lineLayer.cornerRadius = self.underlineCornerWidth;
+        lineLayer.masksToBounds = YES;
+        [textLayer addSublayer:lineLayer];
+    }
 }
 - (void)initScrollView {
     [_scrollView removeFromSuperview];
